@@ -1,0 +1,33 @@
+body {
+    background-color: $body-bg;
+}
+a {
+    color: $link-color;
+    text-decoration: underline;
+}
+.table-unapproved {
+    background-color: rgba(255, 0, 0, 0.04);
+    a.table-book-title {
+        font-weight: bold;
+    }
+    td.table-content {
+        position: relative;
+        &:after {
+            content: 'unapproved';
+            position: absolute;
+            bottom: 3px;
+            right: 3px;
+            font-size: 0.7rem;
+            color: rgba(255, 50, 50, 1);
+        }
+    }
+}
+aside {
+    background-color: #ececec;
+    padding: 15px 15px 200px 15px;
+    ul li ul {
+        list-style: none;
+        font-size: 0.8rem;
+        padding: 0px 0 0 20px;
+    }
+}
