@@ -14,6 +14,7 @@
   border-radius: 4px;
   overflow: hidden;
   transition: box-shadow 0.2s;
+  min-height: 170px;
 }
 
 .concert-card:hover {
@@ -42,6 +43,7 @@ a.concert-card {
 
 .concert-place {
   margin: 8px 0 0;
+  line-height: 1;
 }
 
 @media screen and (max-width: 767px) {

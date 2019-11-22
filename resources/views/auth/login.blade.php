@@ -1,7 +1,23 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="en">
 
-@section('content')
-<div class="container">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>ZP Admin - @yield('title')</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{ asset('css/admin/admin.css') }}" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -70,4 +86,6 @@
         </div>
     </div>
 </div>
-@endsection
+
+</body>
+</html>
