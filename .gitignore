@@ -10,4 +10,5 @@ yarn-error.log
 /.idea
 /storage/framework/sessions
 /storage/framework/cache
+/storage/logs
 .DS_Store

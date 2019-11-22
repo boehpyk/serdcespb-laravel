@@ -1,0 +1,101 @@
+:root {
+    --containerPadding: 16px;
+    --maxViewport: 860px;
+    --whiteColor: rgba(255, 255, 255, 0.9);
+    --blackColor: rgba(0, 0, 0, 0.9);
+    @media all and (max-width: 767px) {
+        --containerPadding: 8px;
+    }
+}
+
+html,
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--blackColor);
+    background-color: #cfcfcf;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.header {
+    min-height: calc(100vh - 56px);
+    background: center / auto 100% no-repeat url('/assets/zeropeople.jpg');
+    overflow: hidden;
+}
+
+.container {
+    padding: 0 var(--containerPadding);
+    max-width: var(--maxViewport);
+    margin: auto;
+}
+
+.video {
+    display: block;
+    margin: 48px 0;
+}
+
+svg {
+    display: inline-block;
+    fill: currentColor;
+}
+
+h1 {
+    margin: 32px 0;
+}
+
+h2 {
+    margin: 48px 0 32px;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 40px;
+    text-transform: uppercase;
+}
+
+h3 {
+    margin: 16px 0;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.footer {
+    margin-top: 32px;
+    padding: 32px var(--containerPadding);
+    color: var(--whiteColor);
+    background-color: var(--blackColor);
+}
+
+.footer-grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -16px;
+}
+
+.footer-grid > * {
+    margin: 16px;
+}
+
+.context {
+    width: 100%;
+    margin-left: auto;
+    text-align: center;
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    & > a {
+        color: var(--whiteColor);
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
+

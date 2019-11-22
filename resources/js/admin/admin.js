@@ -4,7 +4,7 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('../bootstrap');
+require('bootstrap');
 const $ = require('jquery');
 require('@chenfengyuan/datepicker');
 require('@chenfengyuan/datepicker/i18n/datepicker.ru-RU');

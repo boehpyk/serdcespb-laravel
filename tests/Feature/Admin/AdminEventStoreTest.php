@@ -44,7 +44,7 @@ class AdminEventStoreTest extends TestCase
             'type'      => 'supaBoss',
         ]);
 
-        $response = $this->actingAs($user)->post('/admin/events/create');
+        $response = $this->actingAs($user)->get('/admin/events/create');
         $response->assertSuccessful();
         $response->assertStatus(200);
     }
