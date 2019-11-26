@@ -75,7 +75,8 @@
     </div>
 </div>
 
-<!-- Bootstrap core JavaScript -->
+<script src="{{ asset('js/manifest.js') }}"></script>
+<script src="{{ asset('js/vendor.js') }}"></script>
 <script src="{{ asset('js/admin/admin.js') }}"></script>
 
 </body>
