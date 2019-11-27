@@ -19,28 +19,38 @@
 <nav class="social-networks">
     <ul class="social-networks__container">
         <li>
-            <a class="social-link" target="_blank" href="https://vk.com/zero_people" role="listitem">
+            <a class="social-link" target="_blank" href="https://vk.com/zero_people" role="listitem" title="Вконтакте">
                 <img src="{{ asset('assets/icons/vk.svg') }}" border="0" />
             </a>
         </li>
         <li>
-            <a class="social-link" target="_blank" href="https://www.facebook.com/zeropeopleband/" role="listitem">
+            <a class="social-link" target="_blank" href="https://www.facebook.com/zeropeopleband/" role="listitem" title="Facebook">
                 <img src="{{ asset('assets/icons/facebook.svg') }}" border="0" />
             </a>
         </li>
         <li>
-            <a class="social-link" target="_blank" href="https://www.instagram.com/zeropeopleband/" role="listitem">
+            <a class="social-link" target="_blank" href="https://www.instagram.com/zeropeopleband/" role="listitem" title="Instagram">
                 <img src="{{ asset('assets/icons/instagram.svg') }}" border="0" />
             </a>
         </li>
         <li>
-            <a class="social-link" target="_blank" href="http://www.twitter.com/zero_people" role="listitem">
+            <a class="social-link" target="_blank" href="http://www.twitter.com/zero_people" role="listitem" title="Twitter">
                 <img src="{{ asset('assets/icons/twitter.svg') }}" border="0" />
             </a>
         </li>
         <li>
-            <a class="social-link" target="_blank" href="https://www.youtube.com/user/zeropeopleband" role="listitem">
+            <a class="social-link" target="_blank" href="https://www.youtube.com/user/zeropeopleband" role="listitem" title="YouTube">
                 <img src="{{ asset('assets/icons/youtube.svg') }}" border="0" />
+            </a>
+        </li>
+        <li>
+            <a class="social-link" target="_blank" href="https://music.apple.com/ru/artist/zero-people/912495669?l=ru" role="listitem" title="ITunes">
+                <img src="{{ asset('assets/icons/itunes.svg') }}" border="0" />
+            </a>
+        </li>
+        <li>
+            <a class="social-link" target="_blank" href="https://play.google.com/store/music/artist/Zero_People?id=Afme4uzdwxfnfy2qguprwvktrou&hl=ru_RU" role="listitem" title="Google Play">
+                <img src="{{ asset('assets/icons/google-play.svg') }}" border="0" />
             </a>
         </li>
     </ul>

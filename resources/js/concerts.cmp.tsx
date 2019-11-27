@@ -20,7 +20,6 @@ const ConcertsCmp  = () => {
   }, []);
 
   async function getConcertList(): Promise<void> {
-    console.log('fetch called!');
       const res = await fetch(api);
       return res.json()
                 .then(res => setEvents(res.data))
