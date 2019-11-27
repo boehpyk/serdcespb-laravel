@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Widget;
 
 class HomeController extends Controller
 {
@@ -25,4 +26,20 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    /**
+     * Show the main page.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function home()
+    {
+        $data = [];
+        $data['widgets'] = Widget::select('code')
+            ->where('is_publish', 'yes')
+            ->orderBy('id', 'asc')->get();
+
+        return view('welcome', $data);
+    }
+
 }

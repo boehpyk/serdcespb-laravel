@@ -52,7 +52,7 @@
         <aside class="col-sm-3">
 
             <h4>Концерты</h4>
-            <ul class="list-group">
+            <ul class="list-group mb-3">
                 <li class="list-group-item">
                     <a href="{{ route('admin_events_index') }}">Концерты</a>
                     <ul>
@@ -61,6 +61,15 @@
                 </li>
                 <li class="list-group-item"><a href="{{ route('admin_events_create') }}">Добавить концерт</a></li>
             </ul>
+
+            <h4>Билетные виджеты</h4>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <a href="{{ route('admin_widgets_index') }}">Виджеты</a>
+                </li>
+                <li class="list-group-item"><a href="{{ route('admin_widgets_create') }}">Добавить виджет</a></li>
+            </ul>
+
 
         </aside>
         <div class="col-sm-9 mb-5">

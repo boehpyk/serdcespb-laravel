@@ -62,10 +62,16 @@
     <section id="concerts"></section>
 
 
-    <h2>Билеты</h2>
-    <section class="widget" id="widget">
-        <script src="https://radario.ru/scripts/widget/buy-button-widget.js" data-class="radarioButtonScript" data-radario-widget-key="0107096f78337b9b0dd362d462563adda79fd26ea3c667" data-type="afisha" data-stand-alone="true"></script>
-    </section>
+    @if (count($widgets) > 0)
+        <h2>Билеты</h2>
+
+        @foreach($widgets as $widget)
+            <section class="widget">
+                {!! base64_decode($widget->code) !!}
+            </section>
+        @endforeach
+
+    @endif
 
     <iframe
             class="video"

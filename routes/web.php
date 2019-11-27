@@ -23,11 +23,15 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => ['aut
     Route::get('/events/{event}/edit', 'EventController@edit')->where('id', '[0-9]+')->name('admin_events_edit');
     Route::post('/events/{event}/edit', 'EventController@update')->where('id', '[0-9]+')->name('admin_events_update');
     Route::post('/events/{event}/delete', 'EventController@destroy')->where('id', '[0-9]+')->name('admin_events_delete');
+    Route::get('/widgets', 'WidgetController@index')->name('admin_widgets_index');
+    Route::get('/widgets/create', 'WidgetController@create')->name('admin_widgets_create');
+    Route::post('/widgets/create', 'WidgetController@store')->name('admin_widgets_store');
+    Route::get('/widgets/{widget}/edit', 'WidgetController@edit')->where('id', '[0-9]+')->name('admin_widgets_edit');
+    Route::post('/widgets/{widget}/edit', 'WidgetController@update')->where('id', '[0-9]+')->name('admin_widgets_update');
+    Route::post('/widgets/{widget}/delete', 'WidgetController@destroy')->where('id', '[0-9]+')->name('admin_widgets_delete');
 });
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@home')->name('index_page');
 
 
 Auth::routes();

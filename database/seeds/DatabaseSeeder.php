@@ -17,5 +17,9 @@ class DatabaseSeeder extends Seeder
             'type'  => 'supaBoss',
             'password' => bcrypt('qwertyhuerty'),
         ]);
+
+//        DB::table('widgets')->insert([
+//            'description' => '',
+//        ]);
     }
 }
