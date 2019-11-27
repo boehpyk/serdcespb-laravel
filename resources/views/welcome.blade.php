@@ -51,6 +51,12 @@
 
     <section id="concerts"></section>
 
+
+    <h2>Билеты</h2>
+    <section class="widget" id="widget">
+        <script src="https://radario.ru/scripts/widget/buy-button-widget.js" data-class="radarioButtonScript" data-radario-widget-key="0107096f78337b9b0dd362d462563adda79fd26ea3c667" data-type="afisha" data-stand-alone="true"></script>
+    </section>
+
     <iframe
             class="video"
             ref="frame"
