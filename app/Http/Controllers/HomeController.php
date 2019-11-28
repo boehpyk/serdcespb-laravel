@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Widget;
+use App\Video;
 
 class HomeController extends Controller
 {
@@ -38,6 +39,11 @@ class HomeController extends Controller
         $data['widgets'] = Widget::select('code')
             ->where('is_publish', 'yes')
             ->orderBy('id', 'asc')->get();
+
+        $data['videos'] = Video::select('code')
+            ->where('is_publish', 'yes')
+            ->orderBy('id', 'desc')->get();
+
 
         return view('welcome', $data);
     }

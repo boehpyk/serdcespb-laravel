@@ -63,12 +63,21 @@
             </ul>
 
             <h4>Билетные виджеты</h4>
-            <ul class="list-group">
+            <ul class="list-group mb-3">
                 <li class="list-group-item">
                     <a href="{{ route('admin_widgets_index') }}">Виджеты</a>
                 </li>
                 <li class="list-group-item"><a href="{{ route('admin_widgets_create') }}">Добавить виджет</a></li>
             </ul>
+
+            <h4>Видео</h4>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <a href="{{ route('admin_videos_index') }}">Видео</a>
+                </li>
+                <li class="list-group-item"><a href="{{ route('admin_videos_create') }}">Добавить видео</a></li>
+            </ul>
+
 
 
         </aside>

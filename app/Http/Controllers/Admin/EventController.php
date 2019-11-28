@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Carbon\Carbon;
 use App\Event;
 use App\Http\Requests\StoreEvent;
-use App\Files\EventFiles;
+use App\Files\YoutubeParser;
 
 class EventController extends Controller
 {
@@ -105,7 +105,7 @@ class EventController extends Controller
         }
         $event->save();
 
-        $file_handler = new EventFiles($request, $event);
+        $file_handler = new YoutubeParser($request, $event);
         $file_handler->save();
 
 

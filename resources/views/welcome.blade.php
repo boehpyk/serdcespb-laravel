@@ -73,14 +73,20 @@
 
     @endif
 
-    <iframe
-            class="video"
-            ref="frame"
-            src="https://www.youtube.com/embed/lv1410Zk4Yo?autoplay=0"
-            width="100%"
-            height="400"
-            frameborder="0"
-    ></iframe>
+    @if (count($videos) > 0)
+        @foreach($videos as $video)
+            <iframe
+                    class="video"
+                    ref="frame"
+                    src="https://www.youtube.com/embed/{{ $video->code }}?autoplay=0"
+                    width="100%"
+                    height="400"
+                    frameborder="0"
+            ></iframe>
+        @endforeach
+    @endif
+
+
 </main>
 
 <footer class="footer">

@@ -18,3 +18,9 @@ $('[data-toggle="datepicker"]').datepicker({
 $('[data-action="delete"]').on('click', function (e) {
    return window.confirm('Не уверен - не удаляй!!!');
 });
+
+$('#videosUpdate').on('submit', function () {
+    if ($("#videosUpdate input:checkbox.delete:checked").length > 0) {
+        return window.confirm('Не уверен - не удаляй!!!');
+    }
+});
