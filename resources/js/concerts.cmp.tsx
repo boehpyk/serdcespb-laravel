@@ -4,8 +4,8 @@ interface Concert {
   city        : string;
   club_name   : string;
   meeting_url : string;
-  date_begin  : Date;
-  date_end    : Date;
+  date_begin  : string;
+  date_end    : string;
 }
 
 const api:string = '/api/events';
@@ -40,7 +40,7 @@ const ConcertsCmp  = () => {
             <li key={i} className='concert-list-item'>
                 <a className='concert-card' href={meeting_url} target="_blank">
                     <div className='concert-date'>
-                        <span>{getDate(new Date(date_begin))}</span>
+                        <span>{getDate(new Date(date_begin.replace(/ /g,"T")))}</span>
                     </div>
                     <div className='concert-body'>
                         <h3 className='concert-city'>{city}</h3>
@@ -52,7 +52,7 @@ const ConcertsCmp  = () => {
     };
 
     const getDate = (date: Date): string => {
-        return Intl.DateTimeFormat(void 0, { day: 'numeric', month: 'numeric', year: '2-digit' })
+        return Intl.DateTimeFormat('ru-RU', { day: '2-digit', month: '2-digit', year: '2-digit' })
             .format(date)
             // .replace(/\.$/, '')
             .replace(/\//gi, '.')
