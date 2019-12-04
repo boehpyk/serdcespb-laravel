@@ -14,6 +14,7 @@ const ConcertsCmp  = () => {
 
   const [hasError, setErrors] = useState(false);
   const [events, setEvents] = useState([]);
+  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
       getConcertList();
@@ -22,7 +23,10 @@ const ConcertsCmp  = () => {
   async function getConcertList(): Promise<void> {
       const res = await fetch(api);
       return res.json()
-                .then(res => setEvents(res.data))
+                .then(res => {
+                    setEvents(res.data);
+                    setLoaded(true);
+                })
                 .catch(err => setErrors(err));
   }
 
@@ -56,7 +60,12 @@ const ConcertsCmp  = () => {
     };
 
 
-  return <ul className='concert-list'>{getConcertCardList()}</ul>;
+  if (loaded) {
+      return <ul className='concert-list'>{getConcertCardList()}</ul>;
+  }
+  else {
+      return <div className='concert-list-preloader'><div className="preloader"></div></div>;
+  }
 
 };
 export default ConcertsCmp;
