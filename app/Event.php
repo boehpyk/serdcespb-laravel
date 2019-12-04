@@ -13,9 +13,16 @@ class Event extends Model
      */
     protected $guarded = [
         'is_publish',
-        'date_begin',
         'date_end',
         'cover'
+    ];
+
+    /**
+     * @var array
+     */
+    protected $fillable = [
+        'date_begin',
+        'city'
     ];
 
     /**

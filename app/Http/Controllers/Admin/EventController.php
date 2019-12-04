@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Carbon\Carbon;
 use App\Event;
 use App\Http\Requests\StoreEvent;
-use App\Files\YoutubeParser;
+use App\Service\YoutubeParser;
 
 class EventController extends Controller
 {

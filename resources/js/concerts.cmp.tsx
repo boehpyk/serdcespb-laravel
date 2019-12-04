@@ -34,7 +34,7 @@ const ConcertsCmp  = () => {
     const getConcertCard = ({ city, club_name, date_begin, meeting_url }: Concert, i: number): JSX.Element => {
         return (
             <li key={i} className='concert-list-item'>
-                <a className='concert-card' href={meeting_url}>
+                <a className='concert-card' href={meeting_url} target="_blank">
                     <div className='concert-date'>
                         <span>{getDate(new Date(date_begin))}</span>
                     </div>
