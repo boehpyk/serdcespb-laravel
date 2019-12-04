@@ -59,7 +59,11 @@
 <main class="container">
     <h2>Концерты</h2>
 
-    <section id="concerts"></section>
+    <section id="concerts">
+        <div class='concert-list-preloader'>
+            <div class="preloader"></div>
+        </div>
+    </section>
 
 
     @if (count($widgets) > 0)
