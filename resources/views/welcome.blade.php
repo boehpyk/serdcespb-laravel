@@ -76,9 +76,9 @@
                         </h3>
                         <p class='concert-place'>
                             @if (strlen($event->club_url) > 0)
-                                <a href="{{ $event->club_url }}">
+                                <a href="{{ $event->club_url }}" target="_blank">
                             @else
-                            <a href="{{ $event->meeting_url }}">
+                            <a href="{{ $event->meeting_url }}" target="_blank">
                             @endif
                             {{ $event->club_name }}
                             </a>
