@@ -33,7 +33,6 @@ class StoreEvent extends FormRequest
             'date_end'      => 'nullable|date_format:d.m.Y',
             'club_url'      => 'nullable|url',
             'meeting_url'   => 'nullable|url',
-            'tickets_url'   => 'nullable|url',
         ];
     }
 

@@ -13,16 +13,22 @@ class Event extends Model
      */
     protected $guarded = [
         'is_publish',
+        'date_begin',
         'date_end',
-        'cover'
+        'cover',
+        'tickets_url',
     ];
 
     /**
      * @var array
      */
     protected $fillable = [
-        'date_begin',
-        'city'
+        'city',
+        'info',
+        'club_name',
+        'club_url',
+        'meeting_url',
+        'description'
     ];
 
     /**

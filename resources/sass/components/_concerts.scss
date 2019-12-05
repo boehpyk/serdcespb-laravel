@@ -6,20 +6,20 @@
   padding: 0;
   list-style: none;
 }
-
+.concert-list-item {
+  background-color: var(--whiteColor);
+  &:hover {
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 5px -1px;
+    z-index: 2;
+  }
+}
 .concert-card {
   display: block;
   padding: 16px;
-  background-color: var(--whiteColor);
   border-radius: 4px;
   overflow: hidden;
   transition: box-shadow 0.2s;
-  min-height: 170px;
-}
 
-.concert-card:hover {
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 5px -1px;
-  z-index: 2;
 }
 
 a.concert-card {
@@ -39,11 +39,38 @@ a.concert-card {
 
 .concert-city {
   margin: 16px 0 8px;
+  a {
+    color: unset;
+  }
 }
 
 .concert-place {
   margin: 8px 0 0;
   line-height: 1;
+  a {
+    color: unset;
+  }
+}
+.concert-tickets {
+  text-align: center;
+  div {
+    margin: 15px auto 0 auto;
+  }
+  .buy-ticket {
+    display: inline-block;
+    cursor: pointer;
+    white-space: nowrap;
+    padding: 9px 16px;
+    border-radius: 100px;
+    color: rgb(255, 255, 255);
+    font-family: Arial;
+    font-size: 15px;
+    line-height: normal;
+    text-align: center;
+    margin: 15px auto 0 auto;
+    text-decoration: none;
+    background-color: rgb(0, 182, 251);
+  }
 }
 
 @media screen and (max-width: 767px) {

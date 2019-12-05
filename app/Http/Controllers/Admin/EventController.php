@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Carbon\Carbon;
 use App\Event;
 use App\Http\Requests\StoreEvent;
-use App\Service\YoutubeParser;
+use App\Files\EventFiles;
 
 class EventController extends Controller
 {
@@ -48,10 +48,17 @@ class EventController extends Controller
      */
     public function store(StoreEvent $request)
     {
-        $event = Event::create([
-            'city'          => $request->input('city'),
-            'date_begin'    => Carbon::parse($request->input('date_begin'))->format('Y-m-d')
-        ]);
+
+//        $event = Event::create([
+//            'city'          => $request->input('city'),
+//            'date_begin'    => Carbon::parse($request->input('date_begin'))->format('Y-m-d')
+//        ]);
+
+        $event = new Event;
+        $event->city = $request->input('city');
+        $event->date_begin = Carbon::parse($request->input('date_begin'))->format('Y-m-d');
+
+        $event->save();
 
 
         return redirect()->route('admin_events_edit', ['event' => $event->id]);
@@ -103,9 +110,10 @@ class EventController extends Controller
         else {
             $event->date_end = null;
         }
+        $event->tickets_url = base64_encode($request->input('tickets_url'));
         $event->save();
 
-        $file_handler = new YoutubeParser($request, $event);
+        $file_handler = new EventFiles($request, $event);
         $file_handler->save();
 
 

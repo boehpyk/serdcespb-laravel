@@ -60,9 +60,46 @@
     <h2>Концерты</h2>
 
     <section id="concerts">
-        <div class='concert-list-preloader'>
-            <div class="preloader"></div>
-        </div>
+        <ul class='concert-list'>
+        @foreach($events as $event)
+            @php
+                $tickets_url = base64_decode($event->tickets_url)
+            @endphp
+            <li class='concert-list-item'>
+                <div class='concert-card'>
+                    <div class='concert-date'>
+                        <span>{{ \Carbon\Carbon::parse($event->date_begin)->format('d.m.Y') }}</span>
+                    </div>
+                    <div class='concert-body'>
+                        <h3 class='concert-city'>
+                            <a href="{{ $event->meeting_url }}" target="_blank" title="{{ $event->city }} {{ \Carbon\Carbon::parse($event->date_begin)->format('d.m.Y') }}">{{ $event->city }}</a>
+                        </h3>
+                        <p class='concert-place'>
+                            @if (strlen($event->club_url) > 0)
+                                <a href="{{ $event->club_url }}">
+                            @else
+                            <a href="{{ $event->meeting_url }}">
+                            @endif
+                            {{ $event->club_name }}
+                            </a>
+                        </p>
+                        <div class="concert-tickets">
+                            @if (strpos($tickets_url, "http://") === 0 || (strpos($tickets_url, "https://") === 0))
+                                <a href="{{ $tickets_url }}" target="_blank" class="buy-ticket">Купить билет</a>
+                            @endif
+                            @if (strpos($tickets_url, "<script") === 0)
+                                {!! $tickets_url !!}
+                            @endif
+                        </div>
+                    </div>
+                </div>
+            </li>
+        @endforeach
+        </ul>
+
+        {{--<div class='concert-list-preloader'>--}}
+            {{--<div class="preloader"></div>--}}
+        {{--</div>--}}
     </section>
 
 
@@ -115,8 +152,8 @@
     </div>
 </footer>
 
-<script src="{{ asset('js/manifest.js') }}"></script>
-<script src="{{ asset('js/vendor.js') }}"></script>
+{{--<script src="{{ asset('js/manifest.js') }}"></script>--}}
+{{--<script src="{{ asset('js/vendor.js') }}"></script>--}}
 <script src="{{ asset('js/app.js') }}"></script>
 
 </body>

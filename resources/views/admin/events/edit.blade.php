@@ -64,6 +64,12 @@
                 </div>
             </div>
             <div class="form-group row">
+                <label for="event_tickets_url" class="col-sm-3 col-form-label">Продажа билетов</label>
+                <div class="col-sm-9">
+                    <textarea name="tickets_url" class="form-control" id="event_tickets_url">{{ base64_decode($event->tickets_url) }}</textarea>
+                </div>
+            </div>
+            <div class="form-group row">
                 <label for="event_club_name" class="col-sm-3 col-form-label">Название площадки</label>
                 <div class="col-sm-9">
                     <input type="text" name="club_name" class="form-control" id="event_club_name" value="{{ $event->club_name }}">
@@ -79,12 +85,6 @@
                 <label for="event_meeting_url" class="col-sm-3 col-form-label">Ссылка на встречу</label>
                 <div class="col-sm-9">
                     <input type="text" name="meeting_url" class="form-control" id="event_meeting_url" value="{{ $event->meeting_url }}">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="event_tickets_url" class="col-sm-3 col-form-label">Ссылка на продажу билетов</label>
-                <div class="col-sm-9">
-                    <input type="text" name="tickets_url" class="form-control" id="event_tickets_url" value="{{ $event->tickets_url }}">
                 </div>
             </div>
             <div class="form-group row">

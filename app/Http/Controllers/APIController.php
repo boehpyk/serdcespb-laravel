@@ -20,7 +20,7 @@ class APIController extends Controller
 
         $current_date = Carbon::now()->format('Y-m-d');
 
-        $events = Event::select('date_begin', 'date_end', 'city', 'meeting_url', 'club_name')
+        $events = Event::select('id', 'date_begin', 'date_end', 'city', 'meeting_url', 'club_name')
             ->where('date_begin', (($archive) ? '<=' : '>='), $current_date)
             ->where('is_publish', 'yes')
             ->orderBy('date_begin', 'asc')

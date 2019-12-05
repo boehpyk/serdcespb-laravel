@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Widget;
 use App\Video;
+use App\Event;
+use Carbon\Carbon;
 
 class HomeController extends Controller
 {
@@ -35,7 +37,10 @@ class HomeController extends Controller
      */
     public function home()
     {
+        $current_date = Carbon::now()->format('Y-m-d');
+
         $data = [];
+
         $data['widgets'] = Widget::select('code')
             ->where('is_publish', 'yes')
             ->orderBy('id', 'asc')->get();
@@ -43,6 +48,12 @@ class HomeController extends Controller
         $data['videos'] = Video::select('code')
             ->where('is_publish', 'yes')
             ->orderBy('id', 'desc')->get();
+
+        $data['events'] = Event::select('id', 'date_begin', 'date_end', 'city', 'meeting_url', 'club_name', 'tickets_url')
+            ->where('date_begin', '>=', $current_date)
+            ->where('is_publish', 'yes')
+            ->orderBy('date_begin', 'asc')
+            ->get();
 
 
         return view('welcome', $data);
