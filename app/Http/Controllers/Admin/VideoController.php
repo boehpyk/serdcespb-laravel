@@ -89,10 +89,12 @@ class VideoController extends Controller
             $video->save();
         }
 
-        foreach ($request->input('delete') as $key => $value) {
-            if ($value === 'yes') {
-                $video = Video::find($key);
-                $video->delete();
+        if ($request->input('delete') !== null && count($request->input('delete')) > 0) {
+            foreach ($request->input('delete') as $key => $value) {
+                if ($value === 'yes') {
+                    $video = Video::find($key);
+                    $video->delete();
+                }
             }
         }
 
