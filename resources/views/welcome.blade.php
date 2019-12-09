@@ -12,6 +12,10 @@
     <link rel="manifest" href="/site.webmanifest">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Zero People" />
+    <meta property="og:description" content="Zero People - сайд-проект музыкантов Animal ДжаZ Александра Красовицкого и Александра Заранкина" />
+    <meta property="og:url" content="https://zeropeople.ru/" />
     <meta property="og:image" content="https://zeropeople.ru/assets/zeropeople.jpg" />
 </head>
 
