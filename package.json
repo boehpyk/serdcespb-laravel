@@ -35,6 +35,7 @@
         "@chenfengyuan/datepicker": "^1.0.9",
         "postscribe": "^2.0.8",
         "react": "^16.9.0",
-        "react-dom": "^16.9.0"
+        "react-dom": "^16.9.0",
+        "slick-carousel": "^1.8.1"
     }
 }

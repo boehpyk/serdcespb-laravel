@@ -3,7 +3,7 @@
 
 @section('content')
 
-    <h2>Редактирование концерта {{ $event->date_begin->format('d.m.Y') }} {{ $event->city }}</h2>
+    <h2>Редактирование концерта {{ $event->date_begin->format('d.m.Y') }} {{ $event->title }}</h2>
 
     <div class="container mt-5 Events__edit-form">
         @if ($errors->any())
@@ -20,9 +20,9 @@
             @csrf
 
             <div class="form-group row">
-                <label for="event_city" class="col-sm-3 col-form-label">Город</label>
+                <label for="event_title" class="col-sm-3 col-form-label">Название</label>
                 <div class="col-sm-9">
-                    <input type="text" name="city" class="form-control @error('city') is-invalid @enderror" id="event_city" value="{{ $event->city }}">
+                    <input type="text" name="title" class="form-control @error('title') is-invalid @enderror" id="event_title" value="{{ $event->title }}">
                     @error('title')
                     <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
@@ -45,20 +45,20 @@
                 </div>
             </div>
             <div class="form-group row">
-                <label for="event_date_end" class="col-sm-3 col-form-label">Вторая дата для фестов <small>(необязательно)</small></label>
+                <label for="event_time_begin" class="col-sm-3 col-form-label">Время начала <small>(необязательно)</small></label>
                 <div class="col-sm-9">
                     <input
                         type="text"
-                        name="date_end"
-                        class="form-control @error('date_end') is-invalid @enderror"
-                        id="event_date_end"
-                        value="{{ $event->date_end }}"
+                        name="time_begin"
+                        class="form-control @error('time_begin') is-invalid @enderror"
+                        id="event_time_begin"
+                        value="@if ($event->time_begin) {{ $event->time_begin->format('H:i') }} @endif"
                         data-toggle="datepicker"
                     >
                 </div>
             </div>
             <div class="form-group row">
-                <label for="event_info" class="col-sm-3 col-form-label">Доп. инфо о концерте <small>(типа "акустика в полном составе" или "фестиваль Нашествие")</small></label>
+                <label for="event_info" class="col-sm-3 col-form-label">Доп. инфо о концерте <small>(типа "акустика" или "презентация альбома")</small></label>
                 <div class="col-sm-9">
                     <input type="text" name="info" class="form-control" id="event_info" value="{{ $event->info }}">
                 </div>
@@ -70,15 +70,9 @@
                 </div>
             </div>
             <div class="form-group row">
-                <label for="event_club_name" class="col-sm-3 col-form-label">Название площадки</label>
+                <label for="event_artist_url" class="col-sm-3 col-form-label">Сайт артиста</label>
                 <div class="col-sm-9">
-                    <input type="text" name="club_name" class="form-control" id="event_club_name" value="{{ $event->club_name }}">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="event_club_url" class="col-sm-3 col-form-label">Сайт площадки</label>
-                <div class="col-sm-9">
-                    <input type="text" name="club_url" class="form-control" id="event_club_url" value="{{ $event->club_url }}">
+                    <input type="text" name="artist_url" class="form-control" id="event_artist_url" value="{{ $event->artist_url }}">
                 </div>
             </div>
             <div class="form-group row">
@@ -90,7 +84,7 @@
             <div class="form-group row">
                 <label for="event_cover" class="col-sm-3 col-form-label">Картинка афиши</label>
                 <div class="col-sm-9 Book__edit-image-box">
-                    <a href="{{ asset('storage/EventImages/'.$event->id.'/cover.jpg') }}" target="_blank"><img src="{{ asset('storage/EventImages/'.$event->id.'/cover.jpg') }}" border="0" style="max-width: 200px" /></a>
+                    <a href="{{ asset('storage/EventImages/'.$event->id.'/cover.jpg') }}" target="_blank"><img src="{{ asset('storage/EventImages/'.$event->id.'/list.jpg') }}" border="0" style="width:125px; height:auto;" /></a>
                     <input type="file" class="form-control-file" id="event_cover" name="cover" />
                 </div>
             </div>

@@ -33,14 +33,14 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="city" class="col-sm-2 col-form-label">Город</label>
+                    <label for="city" class="col-sm-2 col-form-label">Название</label>
                     <div class="col-sm-10">
                         <input
                                 type="text"
-                                name="city"
-                                class="form-control @error('city') is-invalid @enderror"
-                                id="city"
-                                value="{{ old('city') }}"
+                                name="title"
+                                class="form-control @error('title') is-invalid @enderror"
+                                id="title"
+                                value="{{ old('title') }}"
                         >
                     </div>
                 </div>

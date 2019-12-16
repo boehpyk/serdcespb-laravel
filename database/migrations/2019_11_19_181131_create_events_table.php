@@ -15,15 +15,15 @@ class CreateEventsTable extends Migration
     {
         Schema::create('events', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('title', 512);
             $table->date('date_begin');
-            $table->date('date_end')->nullable();
-            $table->string('city', 256);
+            $table->date('time_begin')->nullable();
             $table->string('info', 512)->nullable();
-            $table->string('club_name', 512)->nullable();
-            $table->string('club_url', 512)->nullable();
             $table->string('meeting_url', 256)->nullable();
             $table->string('tickets_url', 256)->nullable();
+            $table->string('artist_url', 256)->nullable();
             $table->string('image', 256)->nullable();
+            $table->mediumText('music_url')->nullable();
             $table->longText('description')->nullable();
             $table->enum('is_publish', ['yes', 'no'])->default('yes');
             $table->timestamps();

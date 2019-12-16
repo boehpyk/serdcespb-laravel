@@ -1,0 +1,30 @@
+nav {
+    border: solid 1px white;
+    margin-top: 10px !important;
+    ul {
+        display: flex;
+        justify-content: space-between;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        li {
+            flex: 1 1 auto;
+            text-transform: lowercase;
+            font-size: 1.3rem;
+            padding: 10px 5px;
+            text-align: center;
+            font-family: 'PFD', 'Arial', sans-serif;
+            &.active, &:hover {
+                background: rgba(255, 255, 255, .5);
+                a {
+                    color: black;
+                }
+            }
+            a {
+                color: #727272;
+                text-decoration: none;
+            }
+        }
+    }
+}

@@ -4,7 +4,7 @@
 
 
 
-<h4>Welcome to Zero People admin area</h4>
+<h4>Welcome to Serdce SPb admin area</h4>
 
 
 

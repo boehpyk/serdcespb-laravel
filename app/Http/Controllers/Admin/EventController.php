@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Carbon\Carbon;
 use App\Event;
 use App\Http\Requests\StoreEvent;
-use App\Files\EventFiles;
+use App\Service\EventFiles;
 
 class EventController extends Controller
 {
@@ -22,7 +22,7 @@ class EventController extends Controller
 
         $current_date = Carbon::now()->format('Y-m-d');
 
-        $data['events'] = Event::where('date_begin', (($archive) ? '<=' : '>='), $current_date)->orderBy('date_begin', 'desc')->paginate(20);
+        $data['events'] = Event::where('date_begin', (($archive) ? '<=' : '>='), $current_date)->orderBy('date_begin', 'asc')->paginate(20);
         $data['title'] = (($archive) ? 'Архив концертов' : 'Будущие концерты');
 
         return view('admin.events.index', $data);
@@ -49,13 +49,8 @@ class EventController extends Controller
     public function store(StoreEvent $request)
     {
 
-//        $event = Event::create([
-//            'city'          => $request->input('city'),
-//            'date_begin'    => Carbon::parse($request->input('date_begin'))->format('Y-m-d')
-//        ]);
-
         $event = new Event;
-        $event->city = $request->input('city');
+        $event->title = $request->input('title');
         $event->date_begin = Carbon::parse($request->input('date_begin'))->format('Y-m-d');
 
         $event->save();
@@ -104,11 +99,11 @@ class EventController extends Controller
         $event->update($request->all());
         $event->is_publish = $request->input('is_publish');
         $event->date_begin = Carbon::parse($request->input('date_begin'))->format('Y-m-d');
-        if ($request->input('date_end') && strlen($request->input('date_end')) > 0) {
-            $event->date_end = Carbon::parse($request->input('date_end'))->format('Y-m-d');
+        if ($request->input('time_begin') && strlen($request->input('time_begin')) > 0) {
+            $event->time_begin = Carbon::parse($request->input('time_begin'))->format('H:i');
         }
         else {
-            $event->date_end = null;
+            $event->time_begin = null;
         }
         $event->tickets_url = base64_encode($request->input('tickets_url'));
         $event->save();

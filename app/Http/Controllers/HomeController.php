@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Slide;
 use Illuminate\Http\Request;
 use App\Widget;
 use App\Video;
@@ -37,23 +38,20 @@ class HomeController extends Controller
      */
     public function home()
     {
-        $current_date = Carbon::now()->format('Y-m-d');
+        $current_date = Carbon::now()->addDays(-1)->format('Y-m-d');
 
         $data = [];
 
-        $data['widgets'] = Widget::select('code')
-            ->where('is_publish', 'yes')
-            ->orderBy('id', 'asc')->get();
-
-        $data['videos'] = Video::select('code')
-            ->where('is_publish', 'yes')
-            ->orderBy('id', 'desc')->get();
-
-        $data['events'] = Event::select('id', 'date_begin', 'date_end', 'city', 'meeting_url', 'club_name', 'tickets_url')
+        $data['events'] = Event::select('id', 'date_begin', 'title', 'meeting_url', 'tickets_url')
             ->where('date_begin', '>=', $current_date)
             ->where('is_publish', 'yes')
             ->orderBy('date_begin', 'asc')
             ->get();
+
+        $data['slides'] = Slide::select('id', 'date_begin', 'title', 'url', 'image')
+            ->orderBy('date_begin', 'asc')
+            ->get();
+
 
 
         return view('welcome', $data);

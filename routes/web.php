@@ -15,6 +15,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => ['aut
     Route::get('/', function () {
         return view('admin/index');
     })->name('admin_index');
+    
     Route::get('/events', 'EventController@index')->name('admin_events_index')->defaults('archive', false);
     Route::get('/events/archive', 'EventController@index')->name('admin_events_archive')->defaults('archive', true);
     Route::get('/events/create', 'EventController@create')->name('admin_events_create');
@@ -23,28 +24,57 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => ['aut
     Route::get('/events/{event}/edit', 'EventController@edit')->where('id', '[0-9]+')->name('admin_events_edit');
     Route::post('/events/{event}/edit', 'EventController@update')->where('id', '[0-9]+')->name('admin_events_update');
     Route::post('/events/{event}/delete', 'EventController@destroy')->where('id', '[0-9]+')->name('admin_events_delete');
-    /**
-    widgets
-     */
-    Route::get('/widgets', 'WidgetController@index')->name('admin_widgets_index');
-    Route::get('/widgets/create', 'WidgetController@create')->name('admin_widgets_create');
-    Route::post('/widgets/create', 'WidgetController@store')->name('admin_widgets_store');
-    Route::get('/widgets/{widget}/edit', 'WidgetController@edit')->where('id', '[0-9]+')->name('admin_widgets_edit');
-    Route::post('/widgets/{widget}/edit', 'WidgetController@update')->where('id', '[0-9]+')->name('admin_widgets_update');
-    Route::post('/widgets/{widget}/delete', 'WidgetController@destroy')->where('id', '[0-9]+')->name('admin_widgets_delete');
-    /**
-     * videos
-     */
-    Route::get('/videos', 'VideoController@index')->name('admin_videos_index');
-    Route::post('/videos', 'VideoController@update')->name('admin_videos_update');
-    Route::get('/videos/create', 'VideoController@create')->name('admin_videos_create');
-    Route::post('/videos/create', 'VideoController@store')->name('admin_videos_store');
     
+    /*
+     * Caroousel slides
+     */
+    Route::get('/carousel', 'CarouselController@index')->name('admin_carousel_index')->defaults('archive', false);
+    Route::get('/carousel/create', 'CarouselController@create')->name('admin_carousel_create');
+    Route::post('/carousel/create', 'CarouselController@store')->name('admin_carousel_store');
+    Route::get('/carousel/{slide}', 'CarouselController@show')->where('id', '[0-9]+')->name('admin_carousel_show');
+    Route::get('/carousel/{slide}/edit', 'CarouselController@edit')->where('id', '[0-9]+')->name('admin_carousel_edit');
+    Route::post('/carousel/{slide}/edit', 'CarouselController@update')->where('id', '[0-9]+')->name('admin_carousel_update');
+    Route::post('/carousel/{slide}/delete', 'CarouselController@destroy')->where('id', '[0-9]+')->name('admin_carousel_delete');
+
+    /*
+     * Texts
+     */
+    Route::get('/texts', 'TextController@index')->name('admin_texts_index')->defaults('archive', false);
+    Route::get('/texts/create', 'TextController@create')->name('admin_texts_create');
+    Route::post('/texts/create', 'TextController@store')->name('admin_texts_store');
+    Route::get('/texts/{slug}/edit', 'TextController@edit')->where('id', '[0-9]+')->name('admin_texts_edit');
+    Route::post('/texts/{slug}/edit', 'TextController@update')->where('id', '[0-9]+')->name('admin_texts_update');
+    Route::post('/texts/{slug}/delete', 'TextController@destroy')->where('id', '[0-9]+')->name('admin_texts_delete');
+
+    /*
+     * News
+     */
+    Route::get('/news', 'NewsController@index')->name('admin.news.index')->defaults('archive', false);
+    Route::get('/news/archive', 'NewsController@index')->name('admin.news.archive')->defaults('archive', true);
+    Route::get('/news/create', 'NewsController@create')->name('admin.news.create');
+    Route::post('/news/create', 'NewsController@store')->name('admin.news.store');
+    Route::get('/news/{news}', 'NewsController@show')->where('id', '[0-9]+')->name('admin.news.show');
+    Route::get('/news/{news}/edit', 'NewsController@edit')->where('id', '[0-9]+')->name('admin.news.edit');
+    Route::post('/news/{news}/edit', 'NewsController@update')->where('id', '[0-9]+')->name('admin.news.update');
+    Route::post('/news/{news}/delete', 'NewsController@destroy')->where('id', '[0-9]+')->name('admin.news.delete');
+
+    /*
+     * CKEditor for file uploading
+     */
+    Route::get('/ckeditor', 'CkeditorController@index');
+    Route::post('/ckeditor/upload', 'CkeditorController@upload')->name('ckeditor.upload');
+
 });
 
-Route::get('/', 'HomeController@home')->name('index_page');
-
+Route::get('/', 'HomeController@home')->name('index.page');
+Route::get('/afisha', 'EventController@index')->name('events.index');
+Route::get('/news', 'NewsController@index')->name('news.index');
+Route::get('/gallery', 'GalleryController@index')->name('gallery.index');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/{slug}', 'TextController@show')->name('text.show');
+
+
+
+

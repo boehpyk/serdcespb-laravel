@@ -28,10 +28,10 @@ class StoreEvent extends FormRequest
     public function rules()
     {
         return [
-            'city'          => 'required|max:255',
+            'title'         => 'required|max:255',
             'date_begin'    => 'required|date_format:d.m.Y',
-            'date_end'      => 'nullable|date_format:d.m.Y',
-            'club_url'      => 'nullable|url',
+            'time_begin'    => 'nullable|date_format:d.m.Y',
+            'artist_url'    => 'nullable|url',
             'meeting_url'   => 'nullable|url',
         ];
     }

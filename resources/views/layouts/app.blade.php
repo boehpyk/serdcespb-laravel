@@ -1,80 +1,88 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
-    <!-- Styles -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0" />
+    <title>SerdceSPb</title>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
+
 <body>
-    <div id="app">
-        {{--<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">--}}
-            {{--<div class="container">--}}
-                {{--<a class="navbar-brand" href="{{ url('/') }}">--}}
-                    {{--{{ config('app.name', 'Laravel') }}--}}
-                {{--</a>--}}
-                {{--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">--}}
-                    {{--<span class="navbar-toggler-icon"></span>--}}
-                {{--</button>--}}
 
-                {{--<div class="collapse navbar-collapse" id="navbarSupportedContent">--}}
-                    {{--<!-- Left Side Of Navbar -->--}}
-                    {{--<ul class="navbar-nav mr-auto">--}}
-
-                    {{--</ul>--}}
-
-                    {{--<!-- Right Side Of Navbar -->--}}
-                    {{--<ul class="navbar-nav ml-auto">--}}
-                        {{--<!-- Authentication Links -->--}}
-                        {{--@guest--}}
-                            {{--<li class="nav-item">--}}
-                                {{--<a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>--}}
-                            {{--</li>--}}
-                            {{--@if (Route::has('register'))--}}
-                                {{--<li class="nav-item">--}}
-                                    {{--<a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>--}}
-                                {{--</li>--}}
-                            {{--@endif--}}
-                        {{--@else--}}
-                            {{--<li class="nav-item dropdown">--}}
-                                {{--<a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>--}}
-                                    {{--{{ Auth::user()->name }} <span class="caret"></span>--}}
-                                {{--</a>--}}
-
-                                {{--<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">--}}
-                                    {{--<a class="dropdown-item" href="{{ route('logout') }}"--}}
-                                       {{--onclick="event.preventDefault();--}}
-                                                     {{--document.getElementById('logout-form').submit();">--}}
-                                        {{--{{ __('Logout') }}--}}
-                                    {{--</a>--}}
-
-                                    {{--<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">--}}
-                                        {{--@csrf--}}
-                                    {{--</form>--}}
-                                {{--</div>--}}
-                            {{--</li>--}}
-                        {{--@endguest--}}
-                    {{--</ul>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-        {{--</nav>--}}
-
-        <main class="py-4">
-            @yield('content')
-        </main>
+<header class="Header container">
+    <a href="/" class="Header__logo" title="На главную">
+        <img src="/assets/img/logo.png" border="0" />
+    </a>
+    <div class="Header__address">
+        Санкт-Петербург, В.О., Биржевая&nbsp;линия,&nbsp;12
     </div>
+    <div class="Header__socials">
+        <a href="" title="Telegram"><img src="{{ asset('assets/img/icons/Telegram.png') }}" border="0"></a>
+        <a href="" title="Vkontakte"><img src="{{ asset('assets/img/icons/Vkontakte.png') }}" border="0"></a>
+        <a href="" title="Facebook"><img src="{{ asset('assets/img/icons/Facebook.png') }}" border="0"></a>
+        <a href="" title="YouTube"><img src="{{ asset('assets/img/icons/youtube.png') }}" border="0"></a>
+        <a href="" title="Twitter"><img src="{{ asset('assets/img/icons/Twitter.png') }}" border="0"></a>
+        <a href="" title="Instagram"><img src="{{ asset('assets/img/icons/instagram.png') }}" border="0"></a>
+    </div>
+</header>
+
+<nav class="container">
+    <ul class="social-networks__container">
+        <li @if($dep && $dep == 'tickets') class="active"@endif>
+            <a href="{{ route('index.page') }}" role="listitem" title="Билеты">
+                Билеты
+            </a>
+        </li>
+        <li @if($dep && $dep == 'events') class="active"@endif>
+            <a href="{{ route('events.index') }}" role="listitem" title="Афиша">
+                Афиша
+            </a>
+        </li>
+        <li @if($dep && $dep == 'news') class="active"@endif>
+            <a href="{{ route('news.index') }}" role="listitem" title="Новости">
+                Новости
+            </a>
+        </li>
+        <li @if($dep && $dep == 'techrider') class="active"@endif>
+            <a href="{{ route('text.show', ['slug' => 'techrider']) }}" role="listitem" title="Райдер">
+                Райдер
+            </a>
+        </li>
+        <li @if($dep && $dep == 'gallery') class="active"@endif>
+            <a href="{{ route('gallery.index') }}" role="listitem" title="Галерея">
+                Галерея
+            </a>
+        </li>
+        <li @if($dep && $dep == 'services') class="active"@endif>
+            <a href="{{ route('text.show', ['slug' => 'services']) }}" role="listitem" title="Услуги">
+                Услуги
+            </a>
+        </li>
+        <li @if($dep && $dep == 'contacts') class="active"@endif>
+            <a href="{{ route('text.show', ['slug' => 'contacts']) }}" role="listitem" title="Контакты">
+                Контакты
+            </a>
+        </li>
+    </ul>
+</nav>
+
+<main class="container">
+
+
+
+    @yield('content')
+
+
+
+
+</main>
+
+<video class="video-background" preload="auto" autoplay="true" loop="loop" muted="muted">
+    {{--<source src="/assets/video/video.webm" type="video/webm">--}}
+    <source src="/assets/video/fon.mp4" type="video/mp4">
+    {{--<source src="/assets/video/video.ogv" type="video/ogg ogv">--}}
+</video>
+<script src="{{ asset('js/app.js') }}"></script>
+
 </body>
 </html>
