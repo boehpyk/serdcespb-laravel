@@ -28,37 +28,37 @@
 
 <nav class="container">
     <ul class="social-networks__container">
-        <li @if($dep && $dep == 'tickets') class="active"@endif>
+        <li @if(isset($dep) && $dep == 'tickets') class="active"@endif>
             <a href="{{ route('index.page') }}" role="listitem" title="Билеты">
                 Билеты
             </a>
         </li>
-        <li @if($dep && $dep == 'events') class="active"@endif>
+        <li @if(isset($dep) && $dep == 'events') class="active"@endif>
             <a href="{{ route('events.index') }}" role="listitem" title="Афиша">
                 Афиша
             </a>
         </li>
-        <li @if($dep && $dep == 'news') class="active"@endif>
+        <li @if(isset($dep) && $dep == 'news') class="active"@endif>
             <a href="{{ route('news.index') }}" role="listitem" title="Новости">
                 Новости
             </a>
         </li>
-        <li @if($dep && $dep == 'techrider') class="active"@endif>
+        <li @if(isset($dep) && $dep == 'techrider') class="active"@endif>
             <a href="{{ route('text.show', ['slug' => 'techrider']) }}" role="listitem" title="Райдер">
                 Райдер
             </a>
         </li>
-        <li @if($dep && $dep == 'gallery') class="active"@endif>
+        <li @if(isset($dep) && $dep == 'gallery') class="active"@endif>
             <a href="{{ route('gallery.index') }}" role="listitem" title="Галерея">
                 Галерея
             </a>
         </li>
-        <li @if($dep && $dep == 'services') class="active"@endif>
+        <li @if(isset($dep) && $dep == 'services') class="active"@endif>
             <a href="{{ route('text.show', ['slug' => 'services']) }}" role="listitem" title="Услуги">
                 Услуги
             </a>
         </li>
-        <li @if($dep && $dep == 'contacts') class="active"@endif>
+        <li @if(isset($dep) && $dep == 'contacts') class="active"@endif>
             <a href="{{ route('text.show', ['slug' => 'contacts']) }}" role="listitem" title="Контакты">
                 Контакты
             </a>
