@@ -24,3 +24,12 @@ $('#videosUpdate').on('submit', function () {
         return window.confirm('Не уверен - не удаляй!!!');
     }
 });
+$('[data-select]').on('click', function () {
+    let checked = $(this).is(':checked');
+    let type = $(this).data('select');
+    $('input[type="checkbox"]').each(function () {
+        if ($(this).data('type') === type){
+            $(this).attr('checked', checked);
+        }
+    })
+});

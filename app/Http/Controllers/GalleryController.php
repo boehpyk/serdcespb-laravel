@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Gallery;
 
 class GalleryController extends Controller
 {
@@ -13,7 +14,10 @@ class GalleryController extends Controller
      */
     public function index()
     {
-        return view('gallery.index');
+        $data = [];
+        $data['galleries'] = Gallery::where('is_publish', 'yes')->orderBy('id', 'desc')->get();
+
+        return view('gallery.index', $data);
     }
 
 }

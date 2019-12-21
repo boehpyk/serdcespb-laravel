@@ -72,7 +72,23 @@
                 </li>
                 <li class="list-group-item"><a href="{{ route('admin.news.create') }}">Добавить новость</a></li>
             </ul>
-            
+
+            <h4>Фотогоалереи</h4>
+            <ul class="list-group mb-3">
+                <li class="list-group-item">
+                    <a href="{{ route('admin.galleries.index') }}">Галереи</a>
+                </li>
+                <li class="list-group-item"><a href="{{ route('admin.galleries.create') }}">Добавить галерею</a></li>
+            </ul>
+
+            <h4>Текстовые разделы</h4>
+            <ul class="list-group mb-3">
+                @foreach ($texts as $text)
+                <li class="list-group-item">
+                    <a href="{{ route('admin_texts_edit', ['slug' => $text->slug]) }}">{{ $text->title }}</a>
+                </li>
+                @endforeach
+            </ul>
 
             <h4>Карусель</h4>
             <ul class="list-group mb-3">
@@ -82,14 +98,12 @@
                 <li class="list-group-item"><a href="{{ route('admin_carousel_create') }}">Добавить слайд</a></li>
             </ul>
 
-
-            <h4>Текстовые разделы</h4>
+            <h4>Баннеры</h4>
             <ul class="list-group mb-3">
-                @foreach ($texts as $text)
                 <li class="list-group-item">
-                    <a href="{{ route('admin_texts_edit', ['slug' => $text->slug]) }}">{{ $text->title }}</a>
+                    <a href="{{ route('admin.banners.index') }}">Баннеры</a>
                 </li>
-                @endforeach
+                <li class="list-group-item"><a href="{{ route('admin.banners.create') }}">Добавить баннер</a></li>
             </ul>
 
 

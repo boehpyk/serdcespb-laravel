@@ -59,6 +59,32 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => ['aut
     Route::post('/news/{news}/delete', 'NewsController@destroy')->where('id', '[0-9]+')->name('admin.news.delete');
 
     /*
+     * Galleries
+     */
+    Route::get('/galleries', 'GalleryController@index')->name('admin.galleries.index')->defaults('archive', false);
+    Route::get('/galleries/archive', 'GalleryController@index')->name('admin.galleries.archive')->defaults('archive', true);
+    Route::get('/galleries/create', 'GalleryController@create')->name('admin.galleries.create');
+    Route::post('/galleries/create', 'GalleryController@store')->name('admin.galleries.store');
+    Route::get('/galleries/{gallery}', 'GalleryController@show')->where('id', '[0-9]+')->name('admin.galleries.show');
+    Route::get('/galleries/{gallery}/edit', 'GalleryController@edit')->where('id', '[0-9]+')->name('admin.galleries.edit');
+    Route::post('/galleries/{gallery}/edit', 'GalleryController@update')->where('id', '[0-9]+')->name('admin.galleries.update');
+    Route::post('/galleries/{gallery}/delete', 'GalleryController@destroy')->where('id', '[0-9]+')->name('admin.galleries.delete');
+    Route::get('/galleries/{gallery}/photos', 'PhotoController@index')->where('id', '[0-9]+')->name('admin.galleries.photos.list');
+    Route::post('/galleries/{gallery}/photos', 'PhotoController@update')->where('id', '[0-9]+')->name('admin.galleries.photos.update');
+    Route::post('/galleries/{gallery}/photos/add', 'PhotoController@add')->where('id', '[0-9]+')->name('admin.galleries.photos.add');
+
+
+    /**
+    Banners
+     */
+    Route::get('/banners', 'BannerController@index')->name('admin.banners.index');
+    Route::get('/banners/create', 'BannerController@create')->name('admin.banners.create');
+    Route::post('/banners/create', 'BannerController@store')->name('admin.banners.store');
+    Route::get('/banners/{banner}/edit', 'BannerController@edit')->where('id', '[0-9]+')->name('admin.banners.edit');
+    Route::post('/banners/{banner}/edit', 'BannerController@update')->where('id', '[0-9]+')->name('admin.banners.update');
+    Route::post('/banners/{banner}/delete', 'BannerController@destroy')->where('id', '[0-9]+')->name('admin.banners.delete');
+
+    /*
      * CKEditor for file uploading
      */
     Route::get('/ckeditor', 'CkeditorController@index');

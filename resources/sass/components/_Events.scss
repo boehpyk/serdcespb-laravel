@@ -1,0 +1,26 @@
+.Events {
+    margin-top: 15px;
+    display: flex;
+    justify-content: flex-start;
+    &__item {
+        flex: 1 1 auto;
+        display: table;
+        width: 100%;
+        font-family: 'Ristretto', 'Arial', sans-serif;
+        font-size: 2.4rem;
+        margin-bottom: 10px;
+        .link, .date, .title {
+            display: table-cell;
+            vertical-align: middle;
+            padding: 0 15px;
+            text-align: left;
+        }
+        .link {
+            width: 50px;
+        }
+        .date {
+            width: 50px;
+            color: #09d6f1;
+        }
+    }
+}

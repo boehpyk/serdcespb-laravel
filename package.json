@@ -33,6 +33,7 @@
     },
     "dependencies": {
         "@chenfengyuan/datepicker": "^1.0.9",
+        "@fancyapps/fancybox": "^3.5.7",
         "postscribe": "^2.0.8",
         "react": "^16.9.0",
         "react-dom": "^16.9.0",

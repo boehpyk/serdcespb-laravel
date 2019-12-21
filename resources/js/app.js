@@ -1,5 +1,6 @@
-const $ = require('jquery');
+window.$ = window.jQuery = require('jquery');
 require('slick-carousel');
+require('@fancyapps/fancybox');
 
 // enable carousel
 $('[data-addon="carousel"]').slick({
