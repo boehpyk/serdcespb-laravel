@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>ZP Admin - @yield('title')</title>
+    <title>Serdce SPb Admin - @yield('title')</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{{ asset('css/admin/admin.css') }}" rel="stylesheet">
