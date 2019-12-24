@@ -14,12 +14,14 @@ class NewsController extends Controller
      */
     public function index()
     {
-        $data['newss'] = News::select('id', 'date', 'text', 'widget')
-            ->where('is_publish', 'yes')
-            ->orderBy('date', 'desc')
-            ->paginate(20);
+//        $data['newss'] = News::select('id', 'date', 'text', 'widget')
+//            ->where('is_publish', 'yes')
+//            ->orderBy('date', 'desc')
+//            ->paginate(20);
+//
+//        return view('news.index', $data);
 
-        return view('news.index', $data);
+        return view('news.index_vk');
     }
 
 }
