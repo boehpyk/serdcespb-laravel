@@ -4,6 +4,9 @@ body {
     text-align: center;
     font-family: 'Arial', sans-serif;
     font-size: 14px;
+    @media screen and (max-width: 480px) {
+        overflow-x: hidden;
+    }
 }
 a {
     color: $link-color;
@@ -17,8 +20,8 @@ a {
 
 .video-background {
     position: fixed;
-    top: 0px;
-    left: 0px;
+    top: 0;
+    left: 0;
     min-width: 100%;
     min-height: 100%;
     width: auto;
@@ -27,7 +30,38 @@ a {
     //background: url(assets/) no-repeat;
     background-size: cover;
     overflow: hidden;
+    @media screen and (max-width: 480px) {
+        display: none;
+    }
 }
 .pagination {
     margin-top: 30px;
+}
+
+main {
+    position: relative;
+    img {
+        @media screen and (max-width: 480px) {
+            max-width: 100%;
+            height: auto !important;
+        }
+    }
+}
+table.wrappable {
+    @media screen and (max-width: 480px) {
+        display: block;
+    }
+    td {
+        @media screen and (max-width: 480px) {
+            display: inline-block;
+            width: 100% !important;
+            padding-bottom: 20px;
+        }
+    }
+}
+#wrapper {
+    transition: all 0.5s;
+}
+.moved {
+    transform: translateX(-$container-shift);
 }

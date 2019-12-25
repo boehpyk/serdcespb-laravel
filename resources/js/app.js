@@ -13,3 +13,13 @@ $('[data-addon="carousel"]').slick({
     fade: true,
     cssEase: 'linear'
 });
+
+$('#show-xs-menu').on('click', function () {
+    $('#wrapper').toggleClass('moved');
+    if ($('#wrapper').hasClass('moved')) {
+        $('#show-xs-menu img').attr('src', '/assets/img/xs-menu-close.svg');
+    }
+    else {
+        $('#show-xs-menu img').attr('src', '/assets/img/xs-menu.svg');
+    }
+});

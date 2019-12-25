@@ -1,13 +1,23 @@
 nav {
     border: solid 1px white;
     margin-top: 10px !important;
+    @media screen and (max-width: 480px) {
+        position: absolute;
+        top: 0;
+        right: -$container-shift;
+        width: $container-shift;
+        border: none;
+    }
     ul {
         display: flex;
         justify-content: space-between;
         list-style: none;
         margin: 0;
-        padding: 0;
+        padding: 0 10px 0 10px;
         height: 100%;
+        @media screen and (max-width: 480px) {
+            flex-wrap: wrap;
+        }
         li {
             flex: 1 1 auto;
             text-transform: lowercase;
@@ -15,6 +25,10 @@ nav {
             padding: 10px 5px;
             text-align: center;
             font-family: 'PFD', 'Arial', sans-serif;
+            @media screen and (max-width: 480px) {
+                width: 100%;
+                text-align: center;
+            }
             &.active, &:hover {
                 background: rgba(255, 255, 255, .5);
                 a {

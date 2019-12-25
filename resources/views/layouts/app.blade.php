@@ -9,7 +9,12 @@
 
 <body>
 
-<header class="Header container">
+<div id="fb-root"></div>
+
+
+<div class="container" id="wrapper">
+
+    <header class="Header">
     <a href="/" class="Header__logo" title="На главную">
         <img src="/assets/img/logo.png" border="0" />
     </a>
@@ -24,9 +29,12 @@
         <a href="" title="Twitter"><img src="{{ asset('assets/img/icons/Twitter.png') }}" border="0"></a>
         <a href="" title="Instagram"><img src="{{ asset('assets/img/icons/instagram.png') }}" border="0"></a>
     </div>
+        <div class="Header__xs-menu" id="show-xs-menu">
+            <img src="{{ asset('assets/img/xs-menu.svg') }}" border="0" width="32" height="32">
+        </div>
 </header>
 
-<nav class="container">
+    <nav>
     <ul class="social-networks__container">
         <li @if(isset($dep) && $dep == 'tickets') class="active"@endif>
             <a href="{{ route('index.page') }}" role="listitem" title="Билеты">
@@ -66,22 +74,61 @@
     </ul>
 </nav>
 
-<main class="container">
+    <main>
 
 
 
     @yield('content')
 
 
-
-
 </main>
+
+    <footer>
+        <a class="colelem" id="u5200" href="https://vk.com/gooutspb" data-muse-uid="U5200" data-muse-type="img_frame">
+            <img class="block" id="u5200_img" src="{{ asset('assets/img/gooutspb.jpg') }}"/>
+        </a>
+        <a class="colelem" id="u15367" href="https://vk.com/svetskayazhiznnaneve" data-muse-uid="U15367" data-muse-type="img_frame">
+            <img class="block" id="u15367_img" src="{{ asset('assets/img/sv-life.jpg') }}"/>
+        </a>
+        <div class="colelem" id="u4991"><!-- custom html -->
+            <div class="fb-like" data-href="http://serdcespb.ru/" data-send="false" data-width="225" data-show-faces="false" data-colorscheme="light" data-layout="standard" data-action="like"></div>
+        </div>
+        <a class="nonblock nontext clip_frame colelem" id="u7833" href="http://www.gorodovoy.spb.ru/" data-muse-uid="U7833" data-muse-type="img_frame">
+            <img class="block" id="u7833_img" src="{{ asset('assets/img/gorodovoy.jpg') }}"/>
+        </a>
+        <div class="colelem" id="u2045">
+            <!--LiveInternet counter-->
+            <script type="text/javascript"><!--
+                document.write("<a href='//www.liveinternet.ru/click' "+
+                    "target=_blank><img src='//counter.yadro.ru/hit?t18.2;r"+
+                    escape(document.referrer)+((typeof(screen)=="undefined")?"":
+                        ";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+                        screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+                    ";"+Math.random()+
+                    "' alt='' title='LiveInternet: показано число просмотров за 24"+
+                    " часа, посетителей за 24 часа и за сегодня' "+
+                    "border='0' width='88' height='31'><\/a>")
+                //--></script>
+            <!--/LiveInternet-->
+        </div>
+    </footer>
+
+</div>
 
 <video class="video-background" preload="auto" autoplay="true" loop="loop" muted="muted">
     {{--<source src="/assets/video/video.webm" type="video/webm">--}}
     <source src="/assets/video/fon.mp4" type="video/mp4">
     {{--<source src="/assets/video/video.ogv" type="video/ogg ogv">--}}
 </video>
+<script>
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/ru_RU/all.js#xfbml=1";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
 <script src="{{ asset('js/app.js') }}"></script>
 
 </body>

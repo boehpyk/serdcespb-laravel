@@ -1,0 +1,29 @@
+footer {
+    width: 88px;
+    position: absolute;
+    top: 0;
+    right: -112px;
+    @media screen and (max-width: 1180px) {
+        position: static;
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 30px;
+    }
+    .colelem {
+        display: block;
+        width: 100%;
+        margin-bottom: 30px;
+        @media screen and (max-width: 1180px) {
+            max-width: 88px;
+            flex: 1 1 auto;
+            margin-bottom: 0;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+}
