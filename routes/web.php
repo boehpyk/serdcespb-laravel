@@ -90,6 +90,13 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => ['aut
     Route::get('/ckeditor', 'CkeditorController@index');
     Route::post('/ckeditor/upload', 'CkeditorController@upload')->name('ckeditor.upload');
 
+    /*
+     * Change password
+     */
+    Route::get('/changepassword', 'PasswordController@edit')->name('admin.password.edit');
+    Route::post('/changepassword', 'PasswordController@update')->name('admin.password.update');
+
+
 });
 
 Route::get('/', 'HomeController@home')->name('index.page');

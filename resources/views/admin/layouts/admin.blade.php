@@ -106,6 +106,14 @@
                 <li class="list-group-item"><a href="{{ route('admin.banners.create') }}">Добавить баннер</a></li>
             </ul>
 
+            <h4>Прочее</h4>
+            <ul class="list-group mb-3">
+                <li class="list-group-item">
+                    <a href="{{ route('admin.password.edit') }}">Сменить пароль админа</a>
+                </li>
+            </ul>
+
+
 
 
 
