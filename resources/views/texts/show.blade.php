@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h1>{{ $text->title }}</h1>
+{{--<h1>{{ $text->title }}</h1>--}}
 
 {!! $text->text !!}
 

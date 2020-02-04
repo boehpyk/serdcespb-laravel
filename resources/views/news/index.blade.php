@@ -2,8 +2,6 @@
 
 @section('content')
 
-<h1>Новости</h1>
-
 <section class="News">
     @foreach($newss as $news)
         <div class="News__item">

@@ -3,8 +3,6 @@
 @section('content')
 
 <section class="Gallery">
-    <h1>Галерея</h1>
-
     @foreach ($galleries as $gallery)
 
         <div class="Gallery__item">
