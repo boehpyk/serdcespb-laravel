@@ -33,13 +33,13 @@ class CarouselFiles
      * @var int $max_public_width
      * Max width for event cover used for event page
      */
-    private $max_public_width    = 420;
+    private $max_public_width    = 920;
 
     /**
      * @var int $max_public_height
      * Max height for event cover used for event page
      */
-    private $max_public_height   = 209;
+    private $max_public_height   = 212;
 
     /**
      * @var string $upload_path
@@ -108,9 +108,11 @@ class CarouselFiles
     private function makePublicCover($path)
     {
 //        dd(storage_path($path));
+        $ratio = $this->max_public_width/$this->max_public_height;
+
         $image = ImageFacade::make($path);
 
-        if ($image->width() >= $image->height()) {
+        if ($image->width()/$image->height() >= $ratio) {
             $image->resize(null, $this->max_public_height, function ($constraint) {
                 $constraint->aspectRatio();
                 $constraint->upsize();

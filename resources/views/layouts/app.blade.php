@@ -83,35 +83,35 @@
 
 </main>
 
-    <footer>
-        <a class="colelem" id="u5200" href="https://vk.com/gooutspb" data-muse-uid="U5200" data-muse-type="img_frame">
-            <img class="block" id="u5200_img" src="{{ asset('assets/img/gooutspb.jpg') }}"/>
-        </a>
-        <a class="colelem" id="u15367" href="https://vk.com/svetskayazhiznnaneve" data-muse-uid="U15367" data-muse-type="img_frame">
-            <img class="block" id="u15367_img" src="{{ asset('assets/img/sv-life.jpg') }}"/>
-        </a>
-        <div class="colelem" id="u4991"><!-- custom html -->
-            <div class="fb-like" data-href="http://serdcespb.ru/" data-send="false" data-width="225" data-show-faces="false" data-colorscheme="light" data-layout="standard" data-action="like"></div>
-        </div>
-        <a class="nonblock nontext clip_frame colelem" id="u7833" href="http://www.gorodovoy.spb.ru/" data-muse-uid="U7833" data-muse-type="img_frame">
-            <img class="block" id="u7833_img" src="{{ asset('assets/img/gorodovoy.jpg') }}"/>
-        </a>
-        <div class="colelem" id="u2045">
-            <!--LiveInternet counter-->
-            <script type="text/javascript"><!--
-                document.write("<a href='//www.liveinternet.ru/click' "+
-                    "target=_blank><img src='//counter.yadro.ru/hit?t18.2;r"+
-                    escape(document.referrer)+((typeof(screen)=="undefined")?"":
-                        ";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
-                        screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
-                    ";"+Math.random()+
-                    "' alt='' title='LiveInternet: показано число просмотров за 24"+
-                    " часа, посетителей за 24 часа и за сегодня' "+
-                    "border='0' width='88' height='31'><\/a>")
-                //--></script>
-            <!--/LiveInternet-->
-        </div>
-    </footer>
+    {{--<footer>--}}
+        {{--<a class="colelem" id="u5200" href="https://vk.com/gooutspb" data-muse-uid="U5200" data-muse-type="img_frame">--}}
+            {{--<img class="block" id="u5200_img" src="{{ asset('assets/img/gooutspb.jpg') }}"/>--}}
+        {{--</a>--}}
+        {{--<a class="colelem" id="u15367" href="https://vk.com/svetskayazhiznnaneve" data-muse-uid="U15367" data-muse-type="img_frame">--}}
+            {{--<img class="block" id="u15367_img" src="{{ asset('assets/img/sv-life.jpg') }}"/>--}}
+        {{--</a>--}}
+        {{--<div class="colelem" id="u4991"><!-- custom html -->--}}
+            {{--<div class="fb-like" data-href="http://serdcespb.ru/" data-send="false" data-width="225" data-show-faces="false" data-colorscheme="light" data-layout="standard" data-action="like"></div>--}}
+        {{--</div>--}}
+        {{--<a class="nonblock nontext clip_frame colelem" id="u7833" href="http://www.gorodovoy.spb.ru/" data-muse-uid="U7833" data-muse-type="img_frame">--}}
+            {{--<img class="block" id="u7833_img" src="{{ asset('assets/img/gorodovoy.jpg') }}"/>--}}
+        {{--</a>--}}
+        {{--<div class="colelem" id="u2045">--}}
+            {{--<!--LiveInternet counter-->--}}
+            {{--<script type="text/javascript"><!----}}
+                {{--document.write("<a href='//www.liveinternet.ru/click' "+--}}
+                    {{--"target=_blank><img src='//counter.yadro.ru/hit?t18.2;r"+--}}
+                    {{--escape(document.referrer)+((typeof(screen)=="undefined")?"":--}}
+                        {{--";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?--}}
+                        {{--screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+--}}
+                    {{--";"+Math.random()+--}}
+                    {{--"' alt='' title='LiveInternet: показано число просмотров за 24"+--}}
+                    {{--" часа, посетителей за 24 часа и за сегодня' "+--}}
+                    {{--"border='0' width='88' height='31'><\/a>")--}}
+                {{--//--></script>--}}
+            {{--<!--/LiveInternet-->--}}
+        {{--</div>--}}
+    {{--</footer>--}}
 
 </div>
 

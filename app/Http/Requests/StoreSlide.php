@@ -28,8 +28,8 @@ class StoreSlide extends FormRequest
     public function rules()
     {
         return [
-            'title'         => 'required|max:255',
-            'date_begin'    => 'required|date_format:d.m.Y',
+//            'title'         => 'required|max:255',
+//            'date_begin'    => 'required|date_format:d.m.Y',
             'url'           => 'nullable|url',
         ];
     }

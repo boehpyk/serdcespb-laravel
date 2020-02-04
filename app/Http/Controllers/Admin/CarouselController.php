@@ -46,10 +46,7 @@ class CarouselController extends Controller
     public function store(StoreSlide $request)
     {
         $slide = new Slide();
-        $slide->title = $request->input('title');
-        $slide->date_begin = Carbon::parse($request->input('date_begin'))->format('Y-m-d');
         $slide->url = $request->input('url');
-        $slide->date_begin = Carbon::parse($request->input('date_begin'))->format('Y-m-d');
 
         // upload and rsize image
         $file_handler = new CarouselFiles($slide, $request);
@@ -88,10 +85,7 @@ class CarouselController extends Controller
     public function update(StoreSlide $request, $id)
     {
         $slide = Slide::find($id);
-        $slide->title = $request->input('title');
-        $slide->date_begin = Carbon::parse($request->input('date_begin'))->format('Y-m-d');
         $slide->url = $request->input('url');
-        $slide->date_begin = Carbon::parse($request->input('date_begin'))->format('Y-m-d');
 
         if ($request->hasFile('cover')) {
             // upload and rsize image
