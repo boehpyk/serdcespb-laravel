@@ -10,12 +10,6 @@
                 <a href="{{ $slide->url }}" target="_blank" class="image" title="{{ $slide->title }}">
                     <img src="{{ asset('storage/CarouselImages/' . $slide->image) }}" border="0" alt="{{ $slide->title }}" />
                 </a>
-                <div class="date">
-                    {{ $slide->date_begin->format('d/m') }}
-                </div>
-                <div class="title">
-                    {{ $slide->title }}
-                </div>
             </div>
             @endforeach
         </div>

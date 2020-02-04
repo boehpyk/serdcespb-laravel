@@ -48,8 +48,8 @@ class HomeController extends Controller
             ->orderBy('date_begin', 'asc')
             ->get();
 
-        $data['slides'] = Slide::select('id', 'date_begin', 'title', 'url', 'image')
-            ->orderBy('date_begin', 'asc')
+        $data['slides'] = Slide::select('url', 'image')
+            ->orderBy('id', 'desc')
             ->get();
 
 
