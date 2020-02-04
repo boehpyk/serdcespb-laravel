@@ -2,8 +2,6 @@
 
 @section('content')
 
-<h1>Новости</h1>
-
 <section class="News">
 
     <script type="text/javascript" src="https://vk.com/js/api/openapi.js?162"></script>
