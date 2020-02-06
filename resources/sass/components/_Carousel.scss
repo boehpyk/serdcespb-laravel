@@ -1,17 +1,22 @@
 .Carousel {
     width:100%;
-    height: 209px;
     //background-color: white;
     color: black;
     margin-top: 10px;
     &__container {
         height: 209px;
+        @media screen and (max-width: 480px) {
+            height: 110px;
+        }
     }
     &__item {
         position: relative;
         width: 100%;
         height: 212px;
         //background: url('/assets/img/carousel-logo.png') 15px 20px no-repeat;
+        @media screen and (max-width: 480px) {
+            height: 110px;
+        }
         .image {
             display: block;
             position: absolute;
@@ -22,10 +27,6 @@
             img {
                 width: 100%;
                 height: auto;
-                @media screen and (max-width: 480px) {
-                    width: auto;
-                    height: 100% !important;
-                }
             }
         }
         .date {
