@@ -9,7 +9,15 @@
     <!-- VK Widget -->
     <div id="vk_groups"></div>
     <script type="text/javascript">
-        VK.Widgets.Group("vk_groups", {mode: 4, width: "920", height: "800", color1: '070707', color2: 'FCFCFC', color3: 'DF543F'}, 135148155);
+        VK.Widgets.Group("vk_groups", {
+            mode: 4,
+            width: "auto",
+            height: "800",
+            color1: '070707',
+            color2: 'FCFCFC',
+            color3: 'DF543F'
+        },
+            135148155);
     </script>
 
 </section>
