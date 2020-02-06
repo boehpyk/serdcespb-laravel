@@ -46,11 +46,11 @@
                 Афиша
             </a>
         </li>
-        <li @if(isset($dep) && $dep == 'news') class="active"@endif>
-            <a href="{{ route('news.index') }}" role="listitem" title="Новости">
-                Новости
-            </a>
-        </li>
+        {{--<li @if(isset($dep) && $dep == 'news') class="active"@endif>--}}
+            {{--<a href="{{ route('news.index') }}" role="listitem" title="Новости">--}}
+                {{--Новости--}}
+            {{--</a>--}}
+        {{--</li>--}}
         <li @if(isset($dep) && $dep == 'techrider') class="active"@endif>
             <a href="{{ route('text.show', ['slug' => 'techrider']) }}" role="listitem" title="Райдер">
                 Райдер
