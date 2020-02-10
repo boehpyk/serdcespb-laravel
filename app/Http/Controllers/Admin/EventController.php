@@ -98,6 +98,7 @@ class EventController extends Controller
         $event = Event::find($id);
         $event->update($request->all());
         $event->is_publish = $request->input('is_publish');
+        $event->is_free = $request->input('is_free');
         $event->date_begin = Carbon::parse($request->input('date_begin'))->format('Y-m-d');
         if ($request->input('time_begin') && strlen($request->input('time_begin')) > 0) {
             $event->time_begin = Carbon::parse($request->input('time_begin'))->format('H:i');

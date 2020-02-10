@@ -42,7 +42,7 @@ class HomeController extends Controller
 
         $data = [];
 
-        $data['events'] = Event::select('id', 'date_begin', 'title', 'meeting_url', 'tickets_url')
+        $data['events'] = Event::select('id', 'date_begin', 'title', 'meeting_url', 'tickets_url', 'is_free')
             ->where('date_begin', '>=', $current_date)
             ->where('is_publish', 'yes')
             ->orderBy('date_begin', 'asc')
