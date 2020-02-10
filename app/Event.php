@@ -23,6 +23,7 @@ class Event extends Model
      * @var array
      */
     protected $fillable = [
+        'title',
         'city',
         'info',
         'club_name',

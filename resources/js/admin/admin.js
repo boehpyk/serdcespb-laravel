@@ -15,6 +15,12 @@ $('[data-toggle="datepicker"]').datepicker({
     language: 'ru-RU'
 });
 
+$('[data-toggle="timepicker"]').datepicker({
+    format: 'dd.mm.YYYY',
+    language: 'ru-RU'
+});
+
+
 $('[data-action="delete"]').on('click', function (e) {
    return window.confirm('Не уверен - не удаляй!!!');
 });
