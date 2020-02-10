@@ -8,14 +8,11 @@ require('bootstrap');
 const $ = require('jquery');
 require('@chenfengyuan/datepicker');
 require('@chenfengyuan/datepicker/i18n/datepicker.ru-RU');
+require('jquery-timepicker/jquery.timepicker');
+
 
 // enable datepicker for date fields in forms
 $('[data-toggle="datepicker"]').datepicker({
-    format: 'dd.mm.YYYY',
-    language: 'ru-RU'
-});
-
-$('[data-toggle="timepicker"]').datepicker({
     format: 'dd.mm.YYYY',
     language: 'ru-RU'
 });
@@ -38,4 +35,18 @@ $('[data-select]').on('click', function () {
             $(this).attr('checked', checked);
         }
     })
+});
+
+
+$(document).ready(function(){
+    $('[data-toggle="timepicker"]').timepicker({
+        timeFormat: 'HH:mm',
+        interval: 30,
+        minTime: '10',
+        defaultTime: '23',
+        startTime: '10:00',
+        dynamic: false,
+        dropdown: true,
+        scrollbar: true
+    });
 });

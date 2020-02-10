@@ -53,7 +53,7 @@
                         class="form-control @error('time_begin') is-invalid @enderror"
                         id="event_time_begin"
                         value="@if ($event->time_begin) {{ $event->time_begin->format('H:i') }} @endif"
-                        data-toggle="datepicker"
+                        data-toggle="timepicker"
                     >
                 </div>
             </div>
@@ -107,6 +107,20 @@
                     </div>
                 </div>
             </div>
+            <div class="form-group row">
+                <label for="event_is_free" class="col-sm-3 col-form-label">Вход свободный</label>
+                <div class="col-sm-9">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="is_free" id="event_is_free1" value="yes"{{ ($event->is_free === 'yes') ? ' checked' : '' }}>
+                        <label class="form-check-label" for="event_is_free1">Yes</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="is_free" id="event_is_free2" value="no"{{ ($event->is_free !== 'yes') ? ' checked' : '' }}>
+                        <label class="form-check-label" for="event_is_free2">No</label>
+                    </div>
+                </div>
+            </div>
+            
             <button type="submit" class="btn btn-primary">Сохранить</button>
         </form>
         <form action="{{ route('admin_events_delete', $event->id) }}" method="post" style="margin-top: -40px;">
