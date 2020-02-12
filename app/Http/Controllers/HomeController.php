@@ -39,7 +39,7 @@ class HomeController extends Controller
     public function home()
     {
 //        $current_date = Carbon::now()->addDays(-1)->format('Y-m-d');
-        $current_date = Carbon::now();
+        $current_date = Carbon::now()->format('Y-m-d');
 
         $data = [];
 
