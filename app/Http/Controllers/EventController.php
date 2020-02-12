@@ -17,7 +17,8 @@ class EventController extends Controller
      */
     public function index()
     {
-        $current_date = Carbon::now()->addDays(-1)->format('Y-m-d');
+//        $current_date = Carbon::now()->addDays(-1)->format('Y-m-d');
+        $current_date = Carbon::now();
 
         $data = [];
 
