@@ -4,7 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0" />
     <title>SerdceSPb</title>
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon32x32.png" />
 </head>
 
 <body>
@@ -22,12 +23,12 @@
         Санкт-Петербург, В.О., Биржевая&nbsp;линия,&nbsp;12
     </div>
     <div class="Header__socials">
-        <a href="" title="Telegram"><img src="{{ asset('assets/img/icons/Telegram.png') }}" border="0"></a>
-        <a href="" title="Vkontakte"><img src="{{ asset('assets/img/icons/Vkontakte.png') }}" border="0"></a>
-        <a href="" title="Facebook"><img src="{{ asset('assets/img/icons/Facebook.png') }}" border="0"></a>
-        <a href="" title="YouTube"><img src="{{ asset('assets/img/icons/youtube.png') }}" border="0"></a>
-        <a href="" title="Twitter"><img src="{{ asset('assets/img/icons/Twitter.png') }}" border="0"></a>
-        <a href="" title="Instagram"><img src="{{ asset('assets/img/icons/instagram.png') }}" border="0"></a>
+        <a href="https://t.me/serdcespb" title="Telegram" target="_blank"><img src="{{ asset('assets/img/icons/Telegram.png') }}" border="0"></a>
+        <a href="https://vk.com/serdcespb" title="Vkontakte" target="_blank"><img src="{{ asset('assets/img/icons/Vkontakte.png') }}" border="0"></a>
+        <a href="https://www.facebook.com/serdcespb" title="Facebook" target="_blank"><img src="{{ asset('assets/img/icons/Facebook.png') }}" border="0"></a>
+        {{--<a href="" title="YouTube" target="_blank"><img src="{{ asset('assets/img/icons/youtube.png') }}" border="0"></a>--}}
+        {{--<a href="" title="Twitter" target="_blank"><img src="{{ asset('assets/img/icons/Twitter.png') }}" border="0"></a>--}}
+        <a href="https://www.instagram.com/serdcespb/" title="Instagram" target="_blank"><img src="{{ asset('assets/img/icons/instagram.png') }}" border="0"></a>
     </div>
         <div class="Header__xs-menu" id="show-xs-menu">
             <img src="{{ asset('assets/img/xs-menu.svg') }}" border="0" width="32" height="32">
