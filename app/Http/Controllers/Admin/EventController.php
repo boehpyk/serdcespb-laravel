@@ -22,7 +22,7 @@ class EventController extends Controller
 
         $current_date = Carbon::now()->format('Y-m-d');
 
-        $data['events'] = Event::where('date_begin', (($archive) ? '<=' : '>='), $current_date)->orderBy('date_begin', 'asc')->paginate(20);
+        $data['events'] = Event::where('date_begin', (($archive) ? '<=' : '>='), $current_date)->orderBy('date_begin', 'asc')->paginate(200);
         $data['title'] = (($archive) ? 'Архив концертов' : 'Будущие концерты');
 
         return view('admin.events.index', $data);
