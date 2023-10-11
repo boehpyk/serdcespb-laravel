@@ -20,7 +20,7 @@
         <img src="/assets/img/logo.png" border="0" />
     </a>
     <div class="Header__address">
-        Санкт-Петербург, В.О., Биржевая&nbsp;линия,&nbsp;12
+        Санкт-Петербург, Лиговский пр. 50, к. 16
     </div>
     <div class="Header__socials">
         <a href="https://t.me/serdcespb" title="Telegram" target="_blank"><img src="{{ asset('assets/img/icons/Telegram.png') }}" border="0"></a>
