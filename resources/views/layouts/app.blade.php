@@ -25,10 +25,10 @@
     <div class="Header__socials">
         <a href="https://t.me/serdcespb" title="Telegram" target="_blank"><img src="{{ asset('assets/img/icons/Telegram.png') }}" border="0"></a>
         <a href="https://vk.com/serdcespb" title="Vkontakte" target="_blank"><img src="{{ asset('assets/img/icons/Vkontakte.png') }}" border="0"></a>
-        <a href="https://www.facebook.com/serdcespb" title="Facebook" target="_blank"><img src="{{ asset('assets/img/icons/Facebook.png') }}" border="0"></a>
+        {{--<a href="https://www.facebook.com/serdcespb" title="Facebook" target="_blank"><img src="{{ asset('assets/img/icons/Facebook.png') }}" border="0"></a>--}}
         {{--<a href="" title="YouTube" target="_blank"><img src="{{ asset('assets/img/icons/youtube.png') }}" border="0"></a>--}}
         {{--<a href="" title="Twitter" target="_blank"><img src="{{ asset('assets/img/icons/Twitter.png') }}" border="0"></a>--}}
-        <a href="https://www.instagram.com/serdcespb/" title="Instagram" target="_blank"><img src="{{ asset('assets/img/icons/instagram.png') }}" border="0"></a>
+        {{--<a href="https://www.instagram.com/serdcespb/" title="Instagram" target="_blank"><img src="{{ asset('assets/img/icons/instagram.png') }}" border="0"></a>--}}
     </div>
         <div class="Header__xs-menu" id="show-xs-menu">
             <img src="{{ asset('assets/img/xs-menu.svg') }}" border="0" width="32" height="32">
